@@ -1,6 +1,3 @@
-# RAHIM AZIZ
-# Assignment #7
-# 9/28/2020
 # Python 3.8 with PYCHARM
 
 # Import Libraries
@@ -11,7 +8,7 @@ from datetime import datetime
 
 # Variables_________________________________________________________________________________________________________
 # Assign variable api key for OPENWEATHER
-apiKey = "0498228c4cc70f8c9f9051d17dee5679"
+apiKey = ""
 cityName = ""
 cityCode = ""
 date = []
@@ -21,7 +18,7 @@ rain = []
 descriptor = []
 
 # Assign variable api key for NEWSAPI
-apinewsKey = "a12311ac38674b13a79a71bbb803a840"
+apinewsKey = ""
 # Create a list of news tags to store
 author = []
 title = []
@@ -34,13 +31,16 @@ exitInput = ""
 correctGuess = 0
 
 
+#WeatherAPI key
+weatherKey
+
+
 # Forecast Function_____________________________________________________________________________
 def forecast(lat, long):
     print("Would you like to see this weeks forecast? [y]/[n] :")
     inputForecast = str(input())  # Ask user whether they would like to see forecast
 
     if inputForecast == "y":
-        # https://api.openweathermap.org/data/2.5/onecall?lat=45.41&lon=-75.7&exclude=minutely,hourly&appid=0498228c4cc70f8c9f9051d17dee5679
         url = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=minutely," \
                                                                                               "hourly,current&appid=" + apiKey + "&units=metric"
         # Use parsed long and lat coordinates to request API JSON file
@@ -115,7 +115,7 @@ def weather(boolRequest):
 
 # News API_______________________________________________________________________________________________________
 def news(artSize):
-    url = "http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=a12311ac38674b13a79a71bbb803a840"
+    url = "http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey="+weatherKey
     # Make a request for JSON file
     response = requests.get(url)
     data = json.loads(response.text)
