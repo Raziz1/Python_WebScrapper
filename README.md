@@ -1,4 +1,4 @@
-# PythonWebScrapper
+# Python-WebScrapper
 
 ## Resources ☁📰🔢
 The following project is a Python web scrapper. The project uses the user input to obtain the local weather and upcoming forecast. It also retreives global news stories as well as spewing  random number facts. This project uses the following website API's:
